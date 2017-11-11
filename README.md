@@ -35,31 +35,31 @@ module.exports = {
 │       └── index.js
 └── webpack.config.js
 ```
-## WildcardsEntryWebpackPlugin.entry(wildcards [,watchDir]);
-### @wildcards:
+### WildcardsEntryWebpackPlugin.entry(wildcards [,watchDir]);
+#### @wildcards:
 
 eg 1:    @wildcards: "./src/**/*.js", we will wacth './src', and get name 'js/index'
 
 eg 2:    @wildcards: "./src/js/**/*.js", we will wacth './src/js', and get name 'index'
 
-### @watchDir (optional)
+#### @watchDir (optional)
 
 eg 3:    @wildcards: "./src/js/**/*.js", @watchDir: "./src", we will wacth './src', and get name 'js/index'
 
-#### in watch mode, you can add a entry file in watched dir, wepack will get a new entry as your wildcards.
+##### in watch mode, you can add a entry file in watched dir, wepack will get a new entry as your wildcards.
 
 # Dependency
 webpack 3
 
 # principle
-### 1.dynamic enry
+#### 1.dynamic enry
 ```
 //webpack.config.js
 {
     enry: function(){}
 }
 ```
-### 2.watch dir webpack plugin
+#### 2.watch dir webpack plugin
 
 ```
     apply(compiler) {
@@ -70,9 +70,16 @@ webpack 3
     }
 ```
 
+# test
+```
+npm install webpack -g 
+git clone ...
+cd test
+webpack -w
+```
 
 
-### reference
+# reference
 
 https://github.com/webpack/webpack/issues/370
 
