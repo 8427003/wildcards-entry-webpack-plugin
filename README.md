@@ -7,6 +7,7 @@
 
 ```
 // webpack.config.js
+var WildcardsEntryWebpackPlugin = require('wildcards-entry-webpack-plugin');
 module.exports = {
     entry: WildcardsEntryWebpackPlugin.entry('./src/js/**/*.entry.js'),
     output: {
