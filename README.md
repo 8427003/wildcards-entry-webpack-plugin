@@ -5,7 +5,7 @@
 
 1、 npm install wildcards-entry-webpack-plugin --save-dev
 
-2、
+2、webpack.config.js
 ```
 // webpack.config.js
 var WildcardsEntryWebpackPlugin = require('wildcards-entry-webpack-plugin');
