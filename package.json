@@ -1,0 +1,30 @@
+{
+  "name": "wildcards-entry-webpack-plugin",
+  "version": "1.0.0",
+  "description": "wildcards entry webpack-plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "webpack -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/8427003/wildcards-entry-webpack-plugin.git"
+  },
+  "keywords": [
+    "wildcards",
+    "entry",
+    "webpack",
+    "plugin",
+    "multi",
+    "entry"
+  ],
+  "author": "lijun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/8427003/wildcards-entry-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/8427003/wildcards-entry-webpack-plugin#readme",
+  "dependencies": {
+    "glob": "^7.1.2"
+  }
+}
