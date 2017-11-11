@@ -20,7 +20,7 @@ module.exports = {
 };
 ```
 
-# How to use
+# how to use
 
 
 
@@ -50,7 +50,7 @@ eg 3:    @wildcards: "./src/js/**/*.js", @watchDir: "./src", we will wacth './sr
 
 ##### in watch mode, you can add a entry file in watched dir, wepack will get a new entry as your wildcards.
 
-# Dependency
+# dependency
 webpack 3
 
 # principle
