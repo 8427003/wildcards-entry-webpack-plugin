@@ -54,7 +54,7 @@ eg 3:    @wildcards: "./src/js/**/*.js", @watchDir: "./src", we will wacth './sr
 webpack 3
 
 # principle
-#### 1.dynamic enry
+#### 1.dynamic entry
 ```
 //webpack.config.js
 {
