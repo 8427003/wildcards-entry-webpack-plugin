@@ -13,28 +13,26 @@ class WildcardsEntryWebpackPlugin {
     //     └── js
     //         └── index.js
     //
-    // eg 1:    @wildcards: "./src/**/*.js", we will wacth './src', and name 'js/index'
-    // eg 2:    @wildcards: "./src/js/**/*.js", we will wacth './src/js', and name 'index'
-    // eg 3:    @wildcards: "./src/js/**/*.js", @watchDir: "./src", we will wacth './src', and name 'js/index'
+    // eg 1:    @wildcards: "./src/**/*.js", we will wacth './src', and chunk name 'js/index'
+    // eg 2:    @wildcards: "./src/js/**/*.js", we will wacth './src/js', and chunk name 'index'
+    // eg 3:    @wildcards: "./src/js/**/*.js", @assignEntry: {xxx:'./src/a.js'} and chunk name {index:..., xxx...}
     //
-    static entry(wildcards, watchDir) {
+    //
+    //
+    //@wildcards  string
+    //@assignEntry object optional
+    static entry(wildcards, assignEntry) {
         if (!wildcards) {
             throw new  Error('please give me a wildcards path by invok WildcardsEntryWebpackPlugin.entry!');
         }
 
         var basedir, file;
-        if (watchDir) {
-            basedir =  watchDir;
-            file = wildcards;
+        let flagIndex = wildcards.indexOf('/*');
+        if (-1 === flagIndex) {
+            flagIndex = wildcards.lastIndexOf('/');
         }
-        else {
-            let flagIndex = wildcards.indexOf('/*');
-            if (-1 === flagIndex) {
-                flagIndex = wildcards.lastIndexOf('/');
-            }
-            basedir = wildcards.substring(0, flagIndex);
-            file = wildcards.substring(flagIndex + 1);
-        }
+        basedir = wildcards.substring(0, flagIndex);
+        file = wildcards.substring(flagIndex + 1);
 
         basedir = path.resolve(process.cwd(), basedir);
         globBasedir = basedir = path.normalize(basedir);
@@ -53,6 +51,7 @@ class WildcardsEntryWebpackPlugin {
                 pathname = getEntryName(pathname, basedir, extname);
                 entries[pathname] = entry;
             }
+            Object.assign(entries, assignEntry);
             return entries;
         }
     }
