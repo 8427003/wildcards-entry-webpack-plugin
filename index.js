@@ -21,11 +21,12 @@ class WildcardsEntryWebpackPlugin {
     //
     //@wildcards  string
     //@assignEntry object optional
-    static entry(wildcards, assignEntry) {
+    static entry(wildcards, assignEntry, namePrefix) {
         if (!wildcards) {
             throw new  Error('please give me a wildcards path by invok WildcardsEntryWebpackPlugin.entry!');
         }
 
+        var namePrefix = namePrefix ? namePrefix + '/' : '';
         var basedir, file;
         let flagIndex = wildcards.indexOf('/*');
         if (-1 === flagIndex) {
@@ -49,7 +50,7 @@ class WildcardsEntryWebpackPlugin {
                 basename = path.basename(entry, extname);
                 pathname = path.normalize(path.join(dirname,  basename));
                 pathname = getEntryName(pathname, basedir, extname);
-                entries[pathname] = entry;
+                entries[namePrefix + pathname] = entry;
             }
             Object.assign(entries, assignEntry);
             return entries;
