@@ -37,7 +37,7 @@ module.exports = {
 │       └── index.js
 └── webpack.config.js
 ```
-### WildcardsEntryWebpackPlugin.entry(wildcards [,watchDir]);
+### WildcardsEntryWebpackPlugin.entry(wildcards [,assignEntry]);
 #### @wildcards [string]:
 
 eg 1:    @wildcards: "./src/**/*.js", we will wacth './src', and get chunk name 'js/index'
