@@ -3,10 +3,12 @@
 
 # quick start
 
-### npm install wildcards-entry-webpack-plugin --save-dev
+1、 npm install wildcards-entry-webpack-plugin --save-dev
 
+2、webpack.config.js
 ```
 // webpack.config.js
+var WildcardsEntryWebpackPlugin = require('wildcards-entry-webpack-plugin');
 module.exports = {
     entry: WildcardsEntryWebpackPlugin.entry('./src/js/**/*.entry.js'),
     output: {
@@ -18,7 +20,7 @@ module.exports = {
 };
 ```
 
-# How to use
+# how to use
 
 
 
@@ -38,21 +40,21 @@ module.exports = {
 ### WildcardsEntryWebpackPlugin.entry(wildcards [,watchDir]);
 #### @wildcards:
 
-eg 1:    @wildcards: "./src/**/*.js", we will wacth './src', and get name 'js/index'
+eg 1:    @wildcards: "./src/**/*.js", we will wacth './src', and get chunk name 'js/index'
 
-eg 2:    @wildcards: "./src/js/**/*.js", we will wacth './src/js', and get name 'index'
+eg 2:    @wildcards: "./src/js/**/*.js", we will wacth './src/js', and get chunk name 'index'
 
 #### @watchDir (optional)
 
-eg 3:    @wildcards: "./src/js/**/*.js", @watchDir: "./src", we will wacth './src', and get name 'js/index'
+eg 3:    @wildcards: "./src/js/**/*.js", @watchDir: "./src", we will wacth './src', and get chunk name 'js/index'
 
 ##### in watch mode, you can add a entry file in watched dir, wepack will get a new entry as your wildcards.
 
-# Dependency
+# dependency
 webpack 3
 
 # principle
-#### 1.dynamic enry
+#### 1.dynamic entry
 ```
 //webpack.config.js
 {
