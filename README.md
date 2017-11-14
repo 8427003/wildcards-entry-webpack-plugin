@@ -38,15 +38,15 @@ module.exports = {
 └── webpack.config.js
 ```
 ### WildcardsEntryWebpackPlugin.entry(wildcards [,watchDir]);
-#### @wildcards:
+#### @wildcards [string]:
 
 eg 1:    @wildcards: "./src/**/*.js", we will wacth './src', and get chunk name 'js/index'
 
 eg 2:    @wildcards: "./src/js/**/*.js", we will wacth './src/js', and get chunk name 'index'
 
-#### @watchDir (optional)
+#### @assignEntry [Object] (optional):
 
-eg 3:    @wildcards: "./src/js/**/*.js", @watchDir: "./src", we will wacth './src', and get chunk name 'js/index'
+eg 3:    @wildcards: "./src/js/**/*.js", @assignEntry: {xxx:'./src/a.js'} and get chunk name 'js/index' and 'xxx'
 
 ##### in watch mode, you can add a entry file in watched dir, wepack will get a new entry as your wildcards.
 
