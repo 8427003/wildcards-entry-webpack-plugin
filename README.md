@@ -49,9 +49,6 @@ eg 2:    @wildcards: "./src/js/**/*.js", we will wacth './src/js', and get chunk
 WildcardsEntryWebpackPlugin.entry(path.resolve(__dirname, './src/**/*.js'));
 ```
 
-
-eg 2:    @wildcards: "./src/js/**/*.js", we will wacth './src/js', and get chunk name 'index
-
 #### @assignEntry [Object] (optional):
 
 eg 3:    @wildcards: "./src/js/**/*.js", @assignEntry: {xxx:'./src/a.js'} and get chunk name 'js/index' and 'xxx'
