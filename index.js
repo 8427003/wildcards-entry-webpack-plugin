@@ -35,7 +35,7 @@ class WildcardsEntryWebpackPlugin {
         basedir = wildcards.substring(0, flagIndex);
         file = wildcards.substring(flagIndex + 1);
 
-        basedir = path.resolve(process.cwd(), basedir);
+        basedir = path.resolve(__dirname, basedir);
         globBasedir = basedir = path.normalize(basedir);
 
         return function () {
