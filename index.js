@@ -60,7 +60,7 @@ class WildcardsEntryWebpackPlugin {
 
     apply(compiler) {
         compiler.plugin("after-compile", function (compilation, callback) {
-            compilation.contextDependencies.push(globBasedir);
+            compilation.contextDependencies.add(globBasedir);
             callback();
         });
     }
