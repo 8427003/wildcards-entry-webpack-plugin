@@ -69,7 +69,7 @@ webpack 3
 ```
 //webpack.config.js
 {
-    enry: function(){}
+    entry: function(){}
 }
 ```
 #### 2.watch dir webpack plugin
