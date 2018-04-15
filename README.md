@@ -40,9 +40,9 @@ module.exports = {
 ### WildcardsEntryWebpackPlugin.entry(wildcards, assignEntry, namePrefix);
 #### @wildcards [string]:
 
-eg 1:    @wildcards: "./src/**/*.js", we will wacth './src', and get chunk name 'js/index'
+eg 1:    @wildcards: "./src/**/*.js", we will watch './src', and get chunk name 'js/index'
 
-eg 2:    @wildcards: "./src/js/**/*.js", we will wacth './src/js', and get chunk name 'index'
+eg 2:    @wildcards: "./src/js/**/*.js", we will watch './src/js', and get chunk name 'index'
 
 ##### be careful： process.cwd() as the context of the relative path.  alternative, You'd better use a absolute path like this
 ```
